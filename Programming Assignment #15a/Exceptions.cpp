@@ -21,12 +21,7 @@ int main()
 
 			cout << "character('a', -1) = ";
 			cout << character('a', -1) << endl; // Throws an invalidRangeException
-			
-			cout << "character('Z', -1) = ";
-			cout << character('Z', -1) << endl; // Returns 'Y'
 
-			cout << "character('?', 5) = ";
-			cout << character('?', 5) << endl; // Throws an invalidCharacterException
 		}
 		catch (string invalidCharacterException)
 		{
@@ -37,7 +32,29 @@ int main()
 		{
 			cout << invalidRangeException;
 		}
-		return 0;
+	
+try
+{
+	try
+	{
+		cout << endl;
+		cout << "character('Z', -1) = ";
+		cout << character('Z', -1) << endl; // Returns 'b'
+
+		cout << "character('?', 5) = ";
+		cout << character('?', 5) << endl; // Throws an invalidRangeException
+
+	}
+	catch (string invalidCharacterException)
+	{
+		cout << invalidCharacterException;
+	}
+}
+catch (string invalidRangeException)
+{
+	cout << invalidRangeException;
+}
+return 0;
 	}
 char character(char start, int offset)
 {
@@ -46,10 +63,12 @@ char character(char start, int offset)
 		string invalidCharacterException = "ERROR: Invalid Character";
 		throw invalidCharacterException;
 	}
+
 	if (!isalpha(start + offset))
 	{
 		string invalidRangeException = "ERROR: Invalid Range";
 		throw invalidRangeException;
 	}
+
 	return start + offset;
 }
