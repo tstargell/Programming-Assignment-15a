@@ -43,7 +43,6 @@ try
 
 		cout << "character('?', 5) = ";
 		cout << character('?', 5) << endl; // Throws an invalidRangeException
-
 	}
 	catch (string invalidCharacterException)
 	{
