@@ -4,6 +4,7 @@
 
 #include <iostream>
 #include <string>
+#include <cctype>
 using namespace std;
 
 // Function prototype
@@ -33,12 +34,12 @@ int main()
 
 char character(char start, int offset)
 {
-	if (start)
+	if (!isalpha(start))
 	{
 		string invalidCharacterException = "ERROR: Invalid character";
 		throw invalidCharacterException;
 	}
-	if (target)
+	if (!isalpha(start & offset))
 	{
 		string invalidRangeException = "ERROR: Invalid range";
 		throw invalidRangeException;
