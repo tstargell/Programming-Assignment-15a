@@ -1,5 +1,5 @@
 // Taylor Stargell
-// CIS 1202 101
+// CIS 1202 R02
 // December 1, 2023
 
 #include <iostream>
